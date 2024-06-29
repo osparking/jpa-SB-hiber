@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Entity
+@Entity(name = "BOOK")
 @Data
 public class Book {
   @Id

@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -21,8 +22,8 @@ public class User {
   @Column(name = "id")
   private Long id;
 
-  @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "address_id", referencedColumnName = "id")
+  @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+  @PrimaryKeyJoinColumn
   private Address address;
 
 }

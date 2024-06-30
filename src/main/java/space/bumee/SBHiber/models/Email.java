@@ -15,7 +15,11 @@ public class Email {
   private Long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "employee_id")
+  @JoinColumn(name = "manager_id")
   private Manager manager;
+  
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "employee_id")
+  private Employee employee;
 
 }

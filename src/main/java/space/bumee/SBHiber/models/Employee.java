@@ -1,5 +1,6 @@
 package space.bumee.SBHiber.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -25,8 +26,8 @@ public class Employee {
   @Column(name = "id")
   private Long id;
   
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
-  private List<Email> emails;
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "employee")
+  private List<Email> emails = new ArrayList<Email>();
   
   private String ename;
 

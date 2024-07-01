@@ -15,21 +15,21 @@ import lombok.Data;
 @Data
 class AllergensAsEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "meal_id")
-    Long mealId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "meal_id")
+  Long mealId;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn(name = "meal_id")
-    Meal meal;
+  @OneToOne
+  @PrimaryKeyJoinColumn(name = "meal_id")
+  Meal meal;
 
-    @Column(name = "peanuts")
-    boolean peanuts;
+  @Column(name = "peanuts")
+  boolean peanuts;
 
-    @Column(name = "celery")
-    boolean celery;
+  @Column(name = "celery")
+  boolean celery;
 
-    @Column(name = "sesame_seeds")
-    boolean sesameSeeds;
+  @Column(name = "sesame_seeds")
+  boolean sesameSeeds;
 }

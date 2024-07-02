@@ -16,15 +16,11 @@ class OrderEntryTest {
 
   @Test
   public void whenSaveCompositeIdEntity_thenOk() {
-    OrderEntryPK entryPK = new OrderEntryPK();
-    entryPK.setOrderId(1L);
-    entryPK.setProductId(30L);
-
     OrderEntry entry = new OrderEntry();
-    entry.setEntryId(entryPK);
+    
+    entry.setOrderId(1L);
+    entry.setProductId(30L);
     orderEntryRepo.save(entry);
-
-    assertThat(entry.getEntryId().getOrderId()).isEqualTo(1L);
+    assertThat(entry.getOrderId()).isEqualTo(1L);
   }
-
 }

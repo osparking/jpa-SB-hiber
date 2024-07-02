@@ -1,7 +1,5 @@
 package space.bumee.SBHiber.entities;
 
-import java.util.UUID;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,8 +10,8 @@ import lombok.Data;
 @Data
 public class Student {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private UUID studentId;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long studentId;
   
   private String name;
 

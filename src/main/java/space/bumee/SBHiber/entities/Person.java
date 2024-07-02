@@ -19,4 +19,6 @@ public class Person {
     private String name;
     @OneToMany(mappedBy = "person", cascade = CascadeType.PERSIST)
     private List<Address> addresses;
+    @OneToMany(mappedBy = "person", cascade = CascadeType.PERSIST)
+    private List<OrderEntry> entries;
 }

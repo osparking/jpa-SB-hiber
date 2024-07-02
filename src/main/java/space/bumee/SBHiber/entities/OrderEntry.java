@@ -1,13 +1,17 @@
 package space.bumee.SBHiber.entities;
 
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import lombok.Data;
 
 @Entity
 @Data
+@IdClass(OrderEntryPK.class)
 public class OrderEntry {
-  @EmbeddedId
-  private OrderEntryPK entryId;
+  @Id
+  private long orderId;
+  @Id
+  private long productId;
   private int itemCount;
 }
